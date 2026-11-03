@@ -1,0 +1,428 @@
+/* ==========================================================
+   GLOBAL STYLES - DAPUR TYAS by TECNO GARAGE
+   Palette: Warm Cream, Charcoal, Terracotta, Olive Green, Gold Accent
+   Vibe: Modern Indonesian Restaurant & Warm Home Cooking POS
+   ========================================================== */
+
+@import url('fonts-plus-jakarta.css');
+@import url('fonts-playfair.css');
+
+:root {
+    /* Color Palette */
+    --bg-base: #F8F5EE;           /* Warm cream */
+    --bg-surface: #FFFFFF;        /* Pure white for cards */
+    --bg-surface-soft: #F4EFE6;   /* Soft warm background */
+    --bg-surface-card: #FFFFFF;
+    --bg-sidebar: #1E2229;        /* Deep Charcoal */
+    --bg-sidebar-hover: #2B303A;  /* Lighter charcoal */
+    
+    --text-primary: #1F242D;      /* Deep Charcoal text */
+    --text-secondary: #5F6B7A;    /* Muted gray text */
+    --text-light: #9CA3AF;        /* Light muted text */
+    --text-on-dark: #F3F4F6;      /* Off-white for dark background */
+
+    --primary: #C85A32;           /* Terracotta / Orange-Brown */
+    --primary-hover: #B04B26;     /* Darker Terracotta */
+    --primary-light: #FDF0EB;     /* Very soft terracotta tint */
+    --primary-gradient: linear-gradient(135deg, #D4633B 0%, #B84E27 100%);
+
+    --accent-olive: #5B7043;      /* Olive Green */
+    --accent-olive-light: #EEF3E9;/* Soft Olive tint */
+
+    --accent-gold: #C99532;       /* Subtle Warm Gold */
+    --accent-gold-light: #FCF7EB; /* Soft Gold tint */
+
+    --status-success: #2E7D32;    /* Dark Olive-Green Success */
+    --status-success-bg: #E8F5E9;
+    --status-warning: #D97706;    /* Amber Warning */
+    --status-warning-bg: #FEF3C7;
+    --status-danger: #C0392B;     /* Brick Red Danger */
+    --status-danger-bg: #FDEDEC;
+    --status-info: #2B6CB0;       /* Deep Muted Blue Info */
+    --status-info-bg: #EBF8FF;
+
+    --border-color: #E6DFD3;      /* Warm border */
+    --border-subtle: #ECE5DA;
+
+    /* Shadows & Border Radius */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 22px;
+    --radius-full: 9999px;
+
+    --shadow-sm: 0 1px 3px rgba(31, 36, 45, 0.05), 0 1px 2px rgba(31, 36, 45, 0.03);
+    --shadow-md: 0 4px 14px rgba(31, 36, 45, 0.07), 0 2px 5px rgba(31, 36, 45, 0.04);
+    --shadow-lg: 0 10px 25px rgba(31, 36, 45, 0.09), 0 4px 10px rgba(31, 36, 45, 0.04);
+    --shadow-floating: 0 12px 32px rgba(30, 34, 41, 0.22);
+
+    --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+/* ==========================================================
+   BRANDING & LOGO EMBLEM SYSTEM
+   ========================================================== */
+.brand-emblem-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.brand-emblem-img {
+    max-height: 44px;
+    max-width: 100px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.brand-emblem-round {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    background: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(200, 90, 50, 0.15);
+    flex-shrink: 0;
+}
+
+.brand-emblem-round img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-text-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-main-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+    line-height: 1.15;
+}
+
+.brand-tagline {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
+    margin-top: 1px;
+}
+
+.brand-sub-badge {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Flash Messages / Alerts */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+    font-size: 0.925rem;
+    font-weight: 500;
+    animation: fadeInSlide 0.3s ease-out;
+}
+
+.alert-danger {
+    background-color: var(--status-danger-bg);
+    color: var(--status-danger);
+    border: 1px solid #F8D7DA;
+}
+
+.alert-success {
+    background-color: var(--status-success-bg);
+    color: var(--status-success);
+    border: 1px solid #C8E6C9;
+}
+
+.alert-warning {
+    background-color: var(--status-warning-bg);
+    color: var(--status-warning);
+    border: 1px solid #FDE68A;
+}
+
+.alert-info {
+    background-color: var(--status-info-bg);
+    color: var(--status-info);
+    border: 1px solid #BEE3F8;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-main);
+    font-size: 0.925rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(200, 90, 50, 0.25);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #B84E27 0%, #A2421E 100%);
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(200, 90, 50, 0.35);
+}
+
+.btn-secondary {
+    background-color: #E2E8F0;
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: #CBD5E1;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1.5px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--bg-surface-soft);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+}
+
+/* Form Controls */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 11px 14px;
+    font-family: var(--font-main);
+    font-size: 0.925rem;
+    color: var(--text-primary);
+    background-color: var(--bg-surface);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.input-password-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-password-wrap .form-control {
+    padding-right: 44px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.toggle-password:hover {
+    color: var(--primary);
+}
+
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-terracotta {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border: 1px solid rgba(200, 90, 50, 0.2);
+}
+
+.badge-olive {
+    background-color: var(--accent-olive-light);
+    color: var(--accent-olive);
+    border: 1px solid rgba(91, 112, 67, 0.2);
+}
+
+.badge-gold {
+    background-color: var(--accent-gold-light);
+    color: var(--accent-gold);
+    border: 1px solid rgba(201, 149, 50, 0.25);
+}
+
+/* Cards */
+.card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+/* Animation Micro-interactions */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(200, 90, 50, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(200, 90, 50, 0);
+    }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #D1C7B7;
+    border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #B0A593;
+}
